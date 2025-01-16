@@ -184,7 +184,7 @@ class Session(object):
 
             # Nissan servers sometimes do not respond.
             # Connections seem OK, but reads are slow and may not be successful
-            async with self.session.post(url, data=params) as response:
+            async with self.session.post(url, data=params, headers=[]) as response:
                 log.debug(
                     "Response HTTP Status Code: {status_code}".format(
                         status_code=response.status
